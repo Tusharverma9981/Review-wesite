@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="https://via.placeholder.com/40" alt="MovieVerse Logo">
+                <h1>MovieVerse</h1>
+            </div>
+            <div class="navbar-search">
+                <input type="text" placeholder="Search for movies..." id="searchBar">
+                <button onclick="performSearch()">Search</button>
+            </div>
+            <div class="navbar-links">
+                <a href="#reviews">Reviews</a>
+                <a href="#popular">Popular Movies</a>
+                <a href="#latest">Latest Movies</a>
+            </div>
+        </nav>
+    </header>
+    <section id="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="https://via.placeholder.com/1200x400" alt="Featured Movie 1">
+                <h2>Featured Movie 1</h2>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/1200x400" alt="Featured Movie 2">
+                <h2>Featured Movie 2</h2>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/1200x400" alt="Featured Movie 3">
+                <h2>Featured Movie 3</h2>
+            </div>
+            <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </section>
+    
+
+
+    
+
+    <section id="popular">
+        <div class="container">
+            <h2>Popular Movies</h2>
+            <div class="movies-grid">
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster">
+                    <h3>Movie Title 1</h3>
+                    <p>Rating: ⭐⭐⭐⭐☆</p>
+                </div>
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster">
+                    <h3>Movie Title 2</h3>
+                    <p>Rating: ⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster">
+                    <h3>Movie Title 3</h3>
+                    <p>Rating: ⭐⭐⭐⭐☆</p>
+                </div>
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster">
+                    <h3>Movie Title 3</h3>
+                    <p>Rating: ⭐⭐⭐⭐☆</p>
+                </div>
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster">
+                    <h3>Movie Title 3</h3>
+                    <p>Rating: ⭐⭐⭐⭐☆</p>
+                </div>
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster">
+                    <h3>Movie Title 3</h3>
+                    <p>Rating: ⭐⭐⭐⭐☆</p>
+                </div>
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster">
+                    <h3>Movie Title 3</h3>
+                    <p>Rating: ⭐⭐⭐⭐☆</p>
+                </div>
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster">
+                    <h3>Movie Title 3</h3>
+                    <p>Rating: ⭐⭐⭐⭐☆</p>
+                </div>
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster">
+                    <h3>Movie Title 3</h3>
+                    <p>Rating: ⭐⭐⭐⭐☆</p>
+                </div>
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster">
+                    <h3>Movie Title 3</h3>
+                    <p>Rating: ⭐⭐⭐⭐☆</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <div class="container">
+            <h2>Latest Reviews</h2>
+            <div class="review">
+                <h3>Inception</h3>
+                <p>"A mind-bending masterpiece with stunning visuals and a gripping story."</p>
+                <p><strong>- Reviewer Name</strong></p>
+            </div>
+            <div class="review">
+                <h3>The Dark Knight</h3>
+                <p>"An intense and unforgettable superhero film with a phenomenal performance by Heath Ledger."</p>
+                <p><strong>- Reviewer Name</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="home">
+        <div class="hero">
+            <h2>Discover the Best Movies & Reviews</h2>
+            <p>Explore top-rated movies, read reviews, and share your thoughts on the latest hits.</p>
+            <button onclick="scrollToSection('popular')">Explore Now</button>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2024 MovieVerse. All rights reserved.</p>
+            <p>Contact us at: <a href="mailto:info@movieverse.com">info@movieverse.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Populate sample data (run this separately)
+const Movie = require('./models/Movie');
+
+const movies = [
+    {
+        title: 'Inception',
+        description: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the task of implanting an idea into the mind of a CEO.',
+        poster: 'https://via.placeholder.com/1200x400',
+        rating: 4.8,
+    },
+    {
+        title: 'The Dark Knight',
+        description: 'When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.',
+        poster: 'https://via.placeholder.com/1200x400',
+        rating: 4.9,
+    },
+    {
+        title: 'The Matrix',
+        description: 'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.',
+        poster: 'https://via.placeholder.com/1200x400',
+        rating: 4.7,
+    },
+];
+
+async function seedMovies() {
+    await Movie.deleteMany({});
+    await Movie.insertMany(movies);
+    console.log('Sample movies added!');
+}
+
+seedMovies();
+
+        // backeend
+        async function fetchMovies() {
+            try {
+                const response = await fetch('http://localhost:5000/api/movies');
+                const movies = await response.json();
+    
+                // Populate carousel with fetched movies
+                const carousel = document.querySelector('#carousel .carousel-container');
+                carousel.innerHTML = '';  // Clear existing content
+    
+                movies.forEach((movie, index) => {
+                    const slide = document.createElement('div');
+                    slide.classList.add('carousel-slide');
+                    if (index === 0) slide.classList.add('active');
+                    slide.innerHTML = `
+                        <img src="${movie.poster}" alt="${movie.title}">
+                        <h2>${movie.title}</h2>
+                    `;
+                    carousel.appendChild(slide);
+                });
+            } catch (error) {
+                console.error('Failed to fetch movies:', error);
+            }
+        }
+    
+        fetchMovies();
+    </script>
+    
+</body>
+</html>
